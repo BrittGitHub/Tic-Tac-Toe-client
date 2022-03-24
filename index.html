@@ -12,6 +12,15 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+        <h3>Sign Up</h3>
+        <form id="sign-up-form">
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Enter password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <section id="auth-display"></section>
     </body>
 </html>
