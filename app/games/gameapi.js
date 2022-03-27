@@ -19,7 +19,8 @@ const newGame = function (data) {
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: '{}'
   })
 }
 

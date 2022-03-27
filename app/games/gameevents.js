@@ -3,6 +3,7 @@
 const gameUi = require('./gameui.js')
 const gameApi = require('./gameapi.js')
 
+
 const onNewGame = (event) => {
   // prevent the page from reloading due to the submit action
 

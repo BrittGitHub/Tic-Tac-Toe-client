@@ -13,6 +13,8 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
+  $('#new-game').html('<button id="game">New Game</button>')
+
   $('#auth-display').html('<p>User signed in successfully</p>')
 
   // reset all forms
