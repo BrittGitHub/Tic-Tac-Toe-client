@@ -30,7 +30,7 @@ const gameSquareClicked = function () {
   */
   // console.log(store)
   // return $.ajax({
-  //   method: 'POST',
+  //   method: 'PATCH',
   //   url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
   //   headers: {
   //     Authorization: 'Bearer ' + store.user.token

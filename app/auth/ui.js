@@ -15,6 +15,8 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   $('#new-game').html('<button id="game">New Game</button>')
 
+  $('#new-game').show()
+
   $('#auth-display').html('<p>User signed in successfully</p>')
 
   $('.siHeader').hide()
@@ -24,7 +26,6 @@ const onSignInSuccess = function (response) {
 
   $('.cpHeader').show()
   $('#change-password-form').show()
-  $('.soHeader').show()
   $('#sign-out-button').show()
 
   // reset all forms
@@ -61,10 +62,14 @@ const onSignOutSuccess = function () {
 const resetAfterSignOut = function () {
   $('.cpHeader').hide()
   $('#change-password-form').hide()
-  $('.soHeader').hide()
   $('#sign-out-button').hide()
   $('#new-game').hide()
   $('#game-display').hide()
+
+  $('.siHeader').show()
+  $('#sign-in-form').show()
+  $('.suHeader').show()
+  $('#sign-up-form').show()
   //window.location.reload()
 }
 

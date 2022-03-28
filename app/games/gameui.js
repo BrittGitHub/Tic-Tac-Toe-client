@@ -22,6 +22,8 @@ const onNewGameSuccess = function (response) {
   `
   $('#game-display').html(boardHtml)
 
+  $('#game-display').show()
+
   newGame = response
   console.log(newGame)
 }
