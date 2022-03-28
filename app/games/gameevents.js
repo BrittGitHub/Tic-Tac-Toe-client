@@ -3,21 +3,37 @@
 const gameUi = require('./gameui.js')
 const gameApi = require('./gameapi.js')
 
-
 const onNewGame = (event) => {
-  // prevent the page from reloading due to the submit action
-
-  // store the element that emitted the event in a variable
-  // const form = event.target
-  // pass the form to getFormFields and store the data object in another variable
-  // const data = getFormFields(form)
-  // console.log(data)
-
   gameApi
     .newGame()
-    .then(() => gameUi.onNewGameSuccess())
+    .then((response) => gameUi.onNewGameSuccess(response))
     .catch(() => gameUi.onNewGameFailure())
 }
+
+const gameBoard = [null, null, null, null, null, null, null, null, null]
+
+// maybe want to use the newGame that was saved in gameui.js??
+
+const playerX = true
+
+let isGameOver = false
+
+const onSquareClicked = function (event) {
+  // when user clicks on a space first check that the space is empty
+  // if they chose an empty space,add their token to board and game cells array
+
+  const cellIndex = this.getAttribute('data-cell-index')
+
+  console.log(cellIndex)
+  console.log(gameBoard)
+
+  // gameApi
+  //   .gameSquareClicked()
+  //   .then(() => gameUi.onSquareClickedSuccess())
+  //   .catch(() => gameUi.onSquareClickedFailure())
+}
+
 module.exports = {
-  onNewGame
+  onNewGame,
+  onSquareClicked
 }

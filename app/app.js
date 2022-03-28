@@ -1,21 +1,16 @@
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
 const authEvents = require('./auth/events.js')
-// const boardAuthEvents = require('./board/boardevents.js')
 
 const gameEvents = require('./games/gameevents.js')
-
-const boardEvents = require('./board/boardevents.js')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('.cpHeader').hide()
+  $('#change-password-form').hide()
+  $('.soHeader').hide()
+  $('#sign-out-button').hide()
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  // $('#box1').on('click', boardAuthEvents.onSquareOne)
-  // $('#game').on('click', gameEvents.onNewGame)
   $('#new-game').on('click', '#game', gameEvents.onNewGame)
+  $('#game-display').on('click', '.box', gameEvents.onSquareClicked)
 })
