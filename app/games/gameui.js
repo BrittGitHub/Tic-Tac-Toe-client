@@ -29,11 +29,11 @@ const onNewGameFailure = function () {
   $('#error-message').html('<p>Error while starting new game</p>')
 }
 
-// const onSquareClickedSuccess = function (response) {
-//   //$('#board-display').html('<p>square clicked successfully</p>')
-//   store.game = response.game
-//   console.log(store.game)
-// }
+const onSquareClickedSuccess = function (response) {
+  // $('#board-display').html('<p>square clicked successfully</p>')
+  store.game = response.game
+  // console.log(store.game)
+}
 
 // const onSquareClickedFailure = function () {
 //   $('#board-display').html('<p>Error while clicking square one</p>')
@@ -41,7 +41,7 @@ const onNewGameFailure = function () {
 
 module.exports = {
   onNewGameSuccess,
-  onNewGameFailure
-  // onSquareClickedSuccess
+  onNewGameFailure,
+  onSquareClickedSuccess
   // onSquareClickedFailure
 }

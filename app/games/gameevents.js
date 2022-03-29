@@ -2,6 +2,7 @@
 
 const gameUi = require('./gameui.js')
 const gameApi = require('./gameapi.js')
+const store = require('../store.js')
 // const store = require('../store.js')
 
 const onNewGame = (event) => {
@@ -32,10 +33,6 @@ const gameBoard = {
     over: false
   }
 }
-// maybe want to use the newGame that was saved in gameui.js??
-
-// let newGameArray = store.game.cells
-// console.log(newGameArray)
 
 let currentPlayer = 'X'
 
@@ -44,11 +41,15 @@ const over = false
 const onSquareClicked = function (event) {
   const cellIndex = this.getAttribute('data-cell-index')
 
+  const gameCellsArray = store.game.cells
+
   if ($(this).is(':empty')) {
     // add x or o in HTML to each square
     $(this).html(currentPlayer)
     // add the x or o to the value
     gameBoard.game.cell.value = currentPlayer
+    // store the x or in the store
+    gameCellsArray[cellIndex] = currentPlayer
     // store the index in the index of the gameBoard
     gameBoard.game.cell.index = cellIndex
     // switch players
@@ -58,16 +59,18 @@ const onSquareClicked = function (event) {
       currentPlayer = 'X'
     };
   }
+  console.log(gameCellsArray)
+
+  
 
   // if value(x or o) in index 0,1,2 are the same then someone won
 
   // over = gameBoard.game.cell.index[0] && gameBoard.game.cell.index[0] === gameBoard.game.cell.index[1] && gameBoard.game.cell.index[0] === gameBoard.game.cell.index[2] ? console.log('true') : console.log('false')
 
   // console.log(gameBoard)
-
   gameApi
     .gameSquareClicked(gameBoard)
-    // .then((response) => gameUi.onSquareClickedSuccess(response))
+    .then((response) => gameUi.onSquareClickedSuccess(response))
     // .catch(() => gameUi.onSquareClickedFailure())
 }
 

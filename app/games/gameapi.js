@@ -42,5 +42,4 @@ const gameSquareClicked = function (data) {
 module.exports = {
   newGame,
   gameSquareClicked
-  // gameSquareClicked
 }
