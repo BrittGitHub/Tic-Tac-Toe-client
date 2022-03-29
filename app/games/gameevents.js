@@ -2,6 +2,7 @@
 
 const gameUi = require('./gameui.js')
 const gameApi = require('./gameapi.js')
+// const store = require('../store.js')
 
 const onNewGame = (event) => {
   gameApi
@@ -10,53 +11,64 @@ const onNewGame = (event) => {
     .catch(() => gameUi.onNewGameFailure())
 }
 
+// const gameBoard = {
+//   game: {
+//     cells: ['', '', '', '', '', '', '', '', ''],
+//     over: false,
+//     _id: '6241d85f61669d001751a679',
+//     owner: '623ce4e9646429001718d9f2',
+//     createdAt: '2022-03-28T15:46:39.742Z',
+//     updatedAt: '2022-03-28T15:46:39.742Z',
+//     __v: 0
+//   }
+// }
+
 const gameBoard = {
   game: {
-    cells: ['', '', '', '', '', '', '', '', ''],
-    over: false,
-    _id: '6241d85f61669d001751a679',
-    owner: '623ce4e9646429001718d9f2',
-    createdAt: '2022-03-28T15:46:39.742Z',
-    updatedAt: '2022-03-28T15:46:39.742Z',
-    __v: 0
+    cell: {
+      index: 0,
+      value: ''
+    },
+    over: false
   }
 }
-
 // maybe want to use the newGame that was saved in gameui.js??
+
+// let newGameArray = store.game.cells
+// console.log(newGameArray)
 
 let currentPlayer = 'X'
 
 const over = false
 
 const onSquareClicked = function (event) {
-  // when user clicks on a space first check that the space is empty
-  // if they chose an empty space,add their token to board and game cells array
   const cellIndex = this.getAttribute('data-cell-index')
 
   if ($(this).is(':empty')) {
-    // console.log('I guess this is empty')
+    // add x or o in HTML to each square
     $(this).html(currentPlayer)
-    // store the x or o in the cells of the gameboard
-    gameBoard.game.cells[cellIndex] = currentPlayer
-
+    // add the x or o to the value
+    gameBoard.game.cell.value = currentPlayer
+    // store the index in the index of the gameBoard
+    gameBoard.game.cell.index = cellIndex
     // switch players
     if (currentPlayer === 'X') {
       currentPlayer = 'O'
     } else {
       currentPlayer = 'X'
     };
-  } /* else {
-    console.log('this is not empty')
-  } */
-  
+  }
 
-  console.log(cellIndex)
-  console.log(gameBoard)
+  // if value(x or o) in index 0,1,2 are the same then someone won
 
-  // gameApi
-  //   .gameSquareClicked()
-  //   .then(() => gameUi.onSquareClickedSuccess())
-  //   .catch(() => gameUi.onSquareClickedFailure())
+  // over = gameBoard.game.cell.index[0] && gameBoard.game.cell.index[0] === gameBoard.game.cell.index[1] && gameBoard.game.cell.index[0] === gameBoard.game.cell.index[2] ? console.log('true') : console.log('false')
+
+  // console.log(gameBoard)
+
+  gameApi
+    .gameSquareClicked(gameBoard)
+    // .then((response) => gameUi.onSquareClickedSuccess(response))
+    // .catch(() => gameUi.onSquareClickedFailure())
 }
 
 module.exports = {

@@ -2,8 +2,6 @@
 
 const store = require('../store.js')
 
-let newGame
-
 const onNewGameSuccess = function (response) {
   let boardHtml = `
         <div class="container">
@@ -24,16 +22,17 @@ const onNewGameSuccess = function (response) {
 
   $('#game-display').show()
 
-  newGame = response
-  console.log(newGame)
+  store.game = response.game
 }
 
 const onNewGameFailure = function () {
   $('#error-message').html('<p>Error while starting new game</p>')
 }
 
-// const onSquareClickedSuccess = function () {
-//   $('#board-display').html('<p>square clicked successfully</p>')
+// const onSquareClickedSuccess = function (response) {
+//   //$('#board-display').html('<p>square clicked successfully</p>')
+//   store.game = response.game
+//   console.log(store.game)
 // }
 
 // const onSquareClickedFailure = function () {
@@ -42,8 +41,7 @@ const onNewGameFailure = function () {
 
 module.exports = {
   onNewGameSuccess,
-  onNewGameFailure,
-  newGame
-  // onSquareClickedSuccess,
+  onNewGameFailure
+  // onSquareClickedSuccess
   // onSquareClickedFailure
 }

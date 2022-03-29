@@ -1,14 +1,14 @@
 'use strict'
 
 const store = require('../store.js')
+//const config = require(../config.js)
 
 const signUp = function (data) {
   console.log(store)
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up', /* config.apiUrl + '/sign-up' */
     data
-    // same as data: data
   })
 }
 
@@ -17,7 +17,6 @@ const signIn = function (data) {
     method: 'POST',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
     data
-    // same as data: data
   })
 }
 

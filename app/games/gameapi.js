@@ -2,13 +2,14 @@
 'use strict'
 
 const store = require('../store.js')
+//const config = require(../config.js)
 
 const newGame = function (data) {
   console.log(store)
 
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games', /* config.apiUrl + '/games' */
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -16,7 +17,7 @@ const newGame = function (data) {
   })
 }
 
-const gameSquareClicked = function () {
+const gameSquareClicked = function (data) {
   /*
       data = {
           game: {
@@ -28,17 +29,18 @@ const gameSquareClicked = function () {
           }
       }
   */
-  // console.log(store)
-  // return $.ajax({
-  //   method: 'PATCH',
-  //   url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
-  //   headers: {
-  //     Authorization: 'Bearer ' + store.user.token
-  //   }
-  // })
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
 }
 
 module.exports = {
   newGame,
   gameSquareClicked
+  // gameSquareClicked
 }
