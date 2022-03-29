@@ -1,13 +1,13 @@
 'use strict'
 
 const store = require('../store.js')
-//const config = require(../config.js)
+const config = require('../config.js')
 
 const signUp = function (data) {
   console.log(store)
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up', /* config.apiUrl + '/sign-up' */
+    url: config.apiUrl + '/sign-up',
     data
   })
 }
@@ -15,7 +15,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
+    url: config.apiUrl + '/sign-in',
     data
   })
 }
@@ -23,7 +23,7 @@ const signIn = function (data) {
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/change-password',
+    url: config.apiUrl + '/change-password',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -35,7 +35,7 @@ const changePassword = function (data) {
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
+    url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
