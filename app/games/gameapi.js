@@ -5,7 +5,7 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const newGame = function (data) {
-  console.log(store)
+  // console.log(store)
 
   return $.ajax({
     method: 'POST',
