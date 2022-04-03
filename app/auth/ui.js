@@ -31,12 +31,9 @@ const onSignInSuccess = function (response) {
   // reset all forms
   $('form').trigger('reset')
 
-  console.log(response)
+  // console.log(response)
   // store data from the response in my store object
   store.user = response.user
-
-  // reset single form
-  // $('#sign-in-form').trigger('reset')
 }
 
 const onSignInFailure = function () {
@@ -70,7 +67,6 @@ const resetAfterSignOut = function () {
   $('#sign-in-form').show()
   $('.suHeader').show()
   $('#sign-up-form').show()
-  //window.location.reload()
 }
 
 const onSignOutFailure = function () {

@@ -32,7 +32,6 @@ const onNewGameFailure = function () {
 const onSquareClickedSuccess = function (response) {
   // $('#board-display').html('<p>square clicked successfully</p>')
   store.game = response.game
-  // console.log(store.game)
 }
 
 // const onSquareClickedFailure = function () {

@@ -40,7 +40,7 @@ const onSquareClicked = function (event) {
       $(this).html(currentPlayer)
       // add the x or o to the value
       gameBoard.game.cell.value = currentPlayer
-      // store the x or in the store
+      // store the x or o in the store
       gameCellsArray[cellIndex] = currentPlayer
       // store the index in the index of the gameBoard
       gameBoard.game.cell.index = cellIndex
@@ -61,7 +61,7 @@ const onSquareClicked = function (event) {
       const c7 = gameCellsArray[7]
       const c8 = gameCellsArray[8]
 
-      console.log(gameCellsArray)
+      // console.log(gameCellsArray)
 
       if ((c0 === 'X' && c1 === 'X' && c2 === 'X') ||
     (c3 === 'X' && c4 === 'X' && c5 === 'X') ||
@@ -71,7 +71,6 @@ const onSquareClicked = function (event) {
     (c2 === 'X' && c5 === 'X' && c8 === 'X') ||
     (c0 === 'X' && c4 === 'X' && c8 === 'X') ||
     (c2 === 'X' && c4 === 'X' && c6 === 'X')) {
-        console.log('Player X Won!')
         $('#board-display').html('<p>Player X Won!</p>')
         $('#board-display').show()
         gameBoard.game.over = true
@@ -83,7 +82,6 @@ const onSquareClicked = function (event) {
     (c2 === 'O' && c5 === 'O' && c8 === 'O') ||
     (c0 === 'O' && c4 === 'O' && c8 === 'O') ||
     (c2 === 'O' && c4 === 'O' && c6 === 'O')) {
-        console.log('Player 0 Won!')
         $('#board-display').html('<p>Player O Won!</p>')
         $('#board-display').show()
         gameBoard.game.over = true
@@ -92,7 +90,6 @@ const onSquareClicked = function (event) {
     (c4 === 'X' || c4 === 'O') && (c5 === 'X' || c5 === 'O') &&
     (c6 === 'X' || c6 === 'O') && (c7 === 'X' || c7 === 'O') &&
     (c8 === 'X' || c8 === 'O')) {
-        console.log('Tied!')
         $('#board-display').html('<p>It\'s a Tie!</p>')
         $('#board-display').show()
         gameBoard.game.over = true
@@ -100,13 +97,13 @@ const onSquareClicked = function (event) {
       // do nothing
       }
     }
-  }
 
-  // console.log(gameBoard)
-  gameApi
-    .gameSquareClicked(gameBoard)
-    .then((response) => gameUi.onSquareClickedSuccess(response))
+    // console.log(gameBoard)
+    gameApi
+      .gameSquareClicked(gameBoard)
+      .then((response) => gameUi.onSquareClickedSuccess(response))
     // .catch(() => gameUi.onSquareClickedFailure())
+  }
 }
 
 module.exports = {
