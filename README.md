@@ -21,3 +21,4 @@ This application allows you to play Tis-Tac-Toe
 - https://stackoverflow.com/questions/4665466/using-an-if-statement-to-check-if-a-div-is-empty
 - https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883 
 - https://www.geeksforgeeks.org/simple-tic-tac-toe-game-using-javascript/
+- color schemes https://visme.co/blog/website-color-schemes/

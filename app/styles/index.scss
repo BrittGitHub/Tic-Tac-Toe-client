@@ -1,18 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poiret+One&display=swap');
 
+//mostly bootstrap grid
 $font-family:'Playfair Display', serif;
 $body-bg-color: white;
 $box-bg-color: lightgrey;
-$box-border-color: white;
-$alt-bg-color: rgb(0, 136, 255);
+$box-border-color: #DEF2F1;
+$alt-bg-color: #2B7A78;
 
 body {
-  background-color: $body-bg-color;
+  background-color: #DEF2F1;
+  font-family: 'Fredericka the Great', serif;
 }
-
-// .container {
-//   display: hidden;
-// }
 
 .box {
   align-items: center;
@@ -23,15 +22,26 @@ body {
   font-family: $font-family;
   height: 80px;
   justify-content: center;
+  font-family: 'Fredericka the Great', serif;
 }
 
-h1, h3 {
-  font-family: $font-family;
+h1{
+  font-family: 'Fredericka the Great', serif;
   display: flex;
   justify-content: center;
+  line-height: 50px;
+  margin-top: 30px;
+  font-size: 400%;
+} 
+
+h3 {
+  font-family: 'Fredericka the Great', serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 300px) {
   form {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +52,8 @@ h1, h3 {
 #auth-display {
   display: flex;
   justify-content: center;
+  font-family: 'Fredericka the Great', serif;
+  margin-top: 30px;
 }
 
 #change-password-form {
@@ -65,6 +77,8 @@ h1, h3 {
   justify-content: center;
   height: 20px;
   visibility: visible;
+  font-family: 'Fredericka the Great', serif;
+  margin-top: 20px;
 }
 
 #sign-out {
@@ -81,7 +95,7 @@ input {
 } 
 
 button {
-  background-color: #4CAF50;
+  background-color: #3AAFA9;
   border: none;
   border-radius: 8px;
   color: white;
