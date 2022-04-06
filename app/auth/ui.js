@@ -62,7 +62,8 @@ const resetAfterSignOut = function () {
   $('#sign-out-button').hide()
   $('#new-game').hide()
   $('#game-display').hide()
-  $('#board-display').hide()
+  // $('#board-display').hide()
+  $('#board-display').html('')
 
   $('.siHeader').show()
   $('#sign-in-form').show()

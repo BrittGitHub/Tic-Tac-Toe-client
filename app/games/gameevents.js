@@ -17,7 +17,8 @@ const gameBoard = {
 }
 
 const onNewGame = (event) => {
-  $('#board-display').hide()
+  // $('#board-display').hide()
+  $('#board-display').html('')
 
   currentPlayer = 'X'
 

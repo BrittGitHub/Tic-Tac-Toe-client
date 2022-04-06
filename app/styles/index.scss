@@ -25,10 +25,56 @@ body {
   justify-content: center;
 }
 
-// h1 {
-//   font-family: $font-family;
-//   justify-content: center;
-// }
+h1, h3 {
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+}
+
+#auth-display {
+  display: flex;
+  justify-content: center;
+}
+
+#change-password-form {
+  padding-bottom: 25px;
+}
+
+#new-game {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+#game-display {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#board-display {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  visibility: visible;
+}
+
+#sign-out {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+input {
+  margin: 2px 2px;
+}
 
 .alt-color {
   background-color: $alt-bg-color;
@@ -42,7 +88,7 @@ button {
   padding: 7px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   font-size: 12px;
   margin: 2px 2px;
 }

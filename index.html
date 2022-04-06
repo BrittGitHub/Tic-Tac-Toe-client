@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -14,6 +14,8 @@
     <body>
 
       <h1>Tic-Tac-Toe</h1>
+
+      <section id="auth-display"></section>
       
       <h3 class="suHeader">Sign Up</h3>
         <form id="sign-up-form">
@@ -22,8 +24,6 @@
           <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
           <button type="submit">Sign Up</button>
         </form>
-
-      <section id="auth-display"></section>
       
       <h3 class="siHeader">Sign In</h3>
       <form id="sign-in-form">
@@ -47,7 +47,9 @@
 
       <section id="board-display"></section>
 
+      <section id="sign-out">
       <button id="sign-out-button">Sign Out</button>
+      </section>
 
     </body>
 </html>
