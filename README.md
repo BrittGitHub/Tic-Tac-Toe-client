@@ -4,7 +4,6 @@ This application allows you to play Tic-Tac-Toe.
 
 ## To Play for Yourself:
 ***
-
 Please visit the following link: https://brittgithub.github.io/Tic-Tac-Toe-client/
 
 **Please note**: In order to play, you must first create an account. Once you have created an account, you can simply sign in to play moving forward!
@@ -17,13 +16,10 @@ To start a new game, click "New Game" and the board will reset to a blank game b
 
 ## Project Planning
 ***
-
 #### Wireframe
-
 To view a first draft wireframe of the app, [click here](https://imgur.com/vpVAAhO).
 
-### User Stories
-
+#### User Stories
    1. As a player, I want to be able to create an account.
    2. As a player, I want to be able to sign in if I have an account.
    3. As a player, I want to be able to sign out of my account.
