@@ -36,6 +36,7 @@ const onSquareClicked = function (event) {
   const gameCellsArray = store.game.cells
 
   if (gameBoard.game.over === false) {
+    // to find if element is empty (https://stackoverflow.com/questions/4665466/using-an-if-statement-to-check-if-a-div-is-empty)
     if ($(this).is(':empty')) {
     // add x or o in HTML to each square
       $(this).html(currentPlayer)
@@ -46,11 +47,14 @@ const onSquareClicked = function (event) {
       // store the index in the index of the gameBoard
       gameBoard.game.cell.index = cellIndex
       // switch players
+      // resource to help flip players (https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883)
       if (currentPlayer === 'X') {
         currentPlayer = 'O'
       } else {
         currentPlayer = 'X'
       };
+
+      // to inspire some of my game logic below (https://www.geeksforgeeks.org/simple-tic-tac-toe-game-using-javascript/)
 
       const c0 = gameCellsArray[0]
       const c1 = gameCellsArray[1]
